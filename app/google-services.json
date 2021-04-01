@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "807050765809",
+    "project_id": "loginpets-db4ba",
+    "storage_bucket": "loginpets-db4ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807050765809:android:d554b5243eb23f898d5050",
+        "android_client_info": {
+          "package_name": "com.example.app_pets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807050765809-hfvidbkpj38ghqsdcvmgt1hucib0sj25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4CZ5ftZ2IyyrV-83yfjgxic8CxhQi__w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807050765809-hfvidbkpj38ghqsdcvmgt1hucib0sj25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
