@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mEditTextEmail;
     private EditText mEditTextPassword;
     private Button mButtonRegister;
+    private Button mButtonSendToLogin;
 
     //variables de los datos a registrar
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mEditTextEmail=(EditText) findViewById(R.id.editTextEmail);
         mEditTextPassword=(EditText)findViewById(R.id.ediTextPassword);
         mButtonRegister=(Button)findViewById(R.id.btnRegister);
+        mButtonSendToLogin=(Button)findViewById(R.id.btnSendToLogin);
 
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                     Toast.makeText(MainActivity.this,"Debe completar los campos",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mButtonSendToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                //finish();
             }
         });
     }

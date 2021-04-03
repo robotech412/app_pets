@@ -45,6 +45,16 @@
             android:textColor="@android:color/white">
         </Button>
 
+          <Button
+              android:id="@+id/btnSendToLogin"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="YA TENGO UNA CUENTA"
+              android:backgroundTint="@color/teal_700"
+              android:layout_marginTop="10dp"
+              android:textColor="@android:color/white">
+          </Button>
+
        </LinearLayout>
 
 </LinearLayout>
