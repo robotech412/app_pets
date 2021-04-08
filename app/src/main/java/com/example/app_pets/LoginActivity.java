@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mEditTextEmail;
     private EditText mEditTextPassword;
     private Button mButtonLogin;
+    private Button mButtonCreateAccount;
 
     private String email="";
     private String password="";
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         mEditTextEmail=(EditText) findViewById(R.id.editTextEmail);
         mEditTextPassword=(EditText)findViewById(R.id.ediTextPassword);
         mButtonLogin=(Button)findViewById(R.id.btnLogin);
+        mButtonCreateAccount=(Button)findViewById(R.id.btnCrearCuenta);
 
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +51,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,"Complete los campos",Toast.LENGTH_SHORT).show();
 
                 }
+            }
+        });
+
+        mButtonCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateUser();
             }
         });
     }
@@ -66,5 +75,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void CreateUser(){
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
 }
