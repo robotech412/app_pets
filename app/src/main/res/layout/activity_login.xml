@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@drawable/pets_3"
+    android:backgroundTintMode="src_atop">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="184dp"
+        android:layout_height="157dp"
         android:layout_gravity="center"
         android:visibility="visible"
-        app:srcCompat="@mipmap/user"
+        app:srcCompat="@drawable/user_icon"
         tools:visibility="visible"></ImageView>
 
     <EditText
