@@ -10,39 +10,38 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="pantalla de perfil"
-            android:textAlignment="center"
-            android:textSize="18dp"></TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="650dp"
         android:orientation="vertical"
         android:gravity="bottom">
 
-        <com.google.android.material.tabs.TabLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="630dp"
+            android:layout_gravity="bottom">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
             android:layout_gravity="center">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Perfil" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabMed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="medicamentos" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabAlarm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alarma" />
