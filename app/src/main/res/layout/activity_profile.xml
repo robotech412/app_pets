@@ -8,20 +8,58 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="pantalla de perfil"
-        android:textAlignment="center"
-        android:textSize="18dp">
-    </TextView>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnSignout"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="pantalla de perfil"
+            android:textAlignment="center"
+            android:textSize="18dp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="medicamentos" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alarma" />
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CERRAR SESION">
+        android:orientation="vertical">
 
-    </Button>
+        <Button
+            android:id="@+id/btnSignout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="CERRAR SESION"></Button>
+    </LinearLayout>
 
 </LinearLayout>
