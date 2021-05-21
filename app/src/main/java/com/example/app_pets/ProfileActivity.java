@@ -6,9 +6,13 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.app_pets.Controlador.PagerController;
+import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     ViewPager viewPager;
     TabItem tab1,tab2,tab3;
     PagerController pagerAdapter;
+    FloatingActionMenu fab;
 
     private Button mButtonSignOut;
     private FirebaseAuth mAuth;
@@ -35,6 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
         mButtonSignOut=(Button)findViewById(R.id.btnSignout);
+
+        fab = findViewById(R.id.floatingActionMenu);
 
 
         pagerAdapter= new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
@@ -75,6 +82,5 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

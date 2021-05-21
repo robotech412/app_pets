@@ -17,14 +17,16 @@
         android:layout_gravity="center"
         android:visibility="visible"
         app:srcCompat="@drawable/user_icon"
-        tools:visibility="visible"></ImageView>
+        tools:visibility="visible">
+    </ImageView>
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Email"></EditText>
+        android:hint="Email">
+    </EditText>
 
     <EditText
         android:id="@+id/ediTextPassword"
@@ -33,7 +35,8 @@
         app:passwordToggleEnabled="true"
         android:layout_marginTop="20dp"
         android:hint="Password"
-        android:inputType="textPassword"></EditText>
+        android:inputType="textPassword">
+    </EditText>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +44,8 @@
         android:text="recuperar contraseña"
         android:autoLink="web" android:id="@+id/recoveryPassword"
         android:layout_centerInParent="true"
-        android:linksClickable="true"></TextView>
+        android:linksClickable="true">
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
