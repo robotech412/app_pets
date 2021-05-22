@@ -6,13 +6,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.app_pets.Controlador.PagerController;
+import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +20,8 @@ public class ProfileActivity extends AppCompatActivity {
     ViewPager viewPager;
     TabItem tab1,tab2,tab3;
     PagerController pagerAdapter;
-    FloatingActionMenu fab;
+    FloatingActionMenu actionMenu;
+    FloatingActionButton subMenu1;
 
     private Button mButtonSignOut;
     private FirebaseAuth mAuth;
@@ -41,8 +40,9 @@ public class ProfileActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         mButtonSignOut=(Button)findViewById(R.id.btnSignout);
 
-        fab = findViewById(R.id.floatingActionMenu);
-
+        actionMenu = findViewById(R.id.floatingActionMenu);
+        subMenu1 = findViewById(R.id.subMenu1);
+        actionMenu.setClosedOnTouchOutside(true);
 
         pagerAdapter= new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
@@ -79,6 +79,14 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mAuth.signOut();
                 startActivity(new Intent(ProfileActivity.this,LoginActivity.class));
+                finish();
+            }
+        });
+
+        subMenu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,RegistroMedActivity.class));
                 finish();
             }
         });

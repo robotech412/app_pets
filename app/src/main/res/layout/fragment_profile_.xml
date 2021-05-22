@@ -1,35 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile_fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PERFIL"
-        android:gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Editar perfil" />
+            android:visibility="visible">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Agregar informacion" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Editar perfil" />
+
+                <Button
+                    android:id="@+id/btn_AgregarDatos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Agregar informacion" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:foreground="@drawable/user_icon"
+            tools:srcCompat="@drawable/user_icon" />
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:text="Nombre:" />
+
+        <TextView
+            android:id="@+id/txtApellidos"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:text="Apellido:" />
+
+        <TextView
+            android:id="@+id/txtSexo"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:text="Sexo:" />
+
+        <TextView
+            android:id="@+id/txtTelefono"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:text="Telefono:" />
+
     </LinearLayout>
 
 </FrameLayout>

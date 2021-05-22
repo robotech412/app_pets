@@ -18,19 +18,22 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="700dp" />
+            android:layout_height="475dp"
+            android:visibility="visible" />
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/floatingActionMenu"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_width="60dp"
+            android:layout_height="81dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="right"
+            android:visibility="visible"
             app:menu_fab_label="Menú"
             app:srcCompat="@android:drawable/ic_input_add">
 
             <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/subMenu1"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:src="@drawable/medication"
