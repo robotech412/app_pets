@@ -27,14 +27,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Editar perfil" />
+                    android:text="Editar perfil">
+
+                </Button>
 
                 <Button
                     android:id="@+id/btn_AgregarDatos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Agregar informacion" />
+                    android:text="Agregar informacion">
+
+                </Button>
 
             </TableRow>
 
@@ -48,29 +52,131 @@
             android:foreground="@drawable/user_icon"
             tools:srcCompat="@drawable/user_icon" />
 
-        <TextView
-            android:id="@+id/txtNombre"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:text="Nombre:" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="horizontal"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
 
-        <TextView
-            android:id="@+id/txtApellidos"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:text="Apellido:" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="6dp">
 
-        <TextView
-            android:id="@+id/txtSexo"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:text="Sexo:" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp">
 
-        <TextView
-            android:id="@+id/txtTelefono"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:text="Telefono:" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/etiquetaNombres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="Nombres:">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textViewNombres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text=" ">
+
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/etiquetaApellidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="Apellidos: ">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textViewApellidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="">
+
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/etiquetaSexo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="Sexo:">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textViewSexo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="">
+
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/etiquetaTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="Telefono:">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textViewTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:text="">
+
+                        </TextView>
+
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

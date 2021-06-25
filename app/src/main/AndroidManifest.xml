@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".UserRegisterActivity" />
         <activity android:name=".RegistroMedActivity" />
         <activity android:name=".Activity_Datos_Usuario"/>
     </application>

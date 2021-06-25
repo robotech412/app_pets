@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void CreateUser(){
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        startActivity(new Intent(LoginActivity.this, UserRegisterActivity.class));
         finish();
     }
 }

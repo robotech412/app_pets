@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class UserRegisterActivity extends AppCompatActivity {
 
     private EditText mEditTextName;
     private EditText mEditTextEmail;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.user_register_activity);
 
         mAuth= FirebaseAuth.getInstance();
         mDatabase= FirebaseDatabase.getInstance().getReference();
@@ -63,19 +63,19 @@ public class MainActivity extends AppCompatActivity {
                         registerUser();
 
                     }else{
-                        Toast.makeText(MainActivity.this,"El password debe tener al menos 6 caracteres",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserRegisterActivity.this,"El password debe tener al menos 6 caracteres",Toast.LENGTH_SHORT).show();
                     }
 
                 }
                 else
-                    Toast.makeText(MainActivity.this,"Debe completar los campos",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserRegisterActivity.this,"Debe completar los campos",Toast.LENGTH_SHORT).show();
             }
         });
 
         mButtonSendToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                startActivity(new Intent(UserRegisterActivity.this,LoginActivity.class));
                 //finish();
             }
         });
@@ -99,16 +99,16 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if (task2.isSuccessful()){
-                                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                                startActivity(new Intent(UserRegisterActivity.this,ProfileActivity.class));
                                 finish();
                             }
                             else{
-                                Toast.makeText(MainActivity.this,"No se pudieron crear los datos correctamente",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserRegisterActivity.this,"No se pudieron crear los datos correctamente",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }else{
-                    Toast.makeText(MainActivity.this,"No se pudo registrar este usuario",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserRegisterActivity.this,"No se pudo registrar este usuario",Toast.LENGTH_SHORT).show();
                 }
 
             }

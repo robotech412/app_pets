@@ -3,12 +3,21 @@ package com.example.app_pets;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Source;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,8 +30,11 @@ public class profile_fragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
     View vista;
-    Button agregar_datos;
+    Button btn_agregar_datos;
+    TextView txtViewNombres, txtViewApellidos, txtViewSexo, txtViewTelefono;
+    private FirebaseFirestore db;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,15 +76,40 @@ public class profile_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_profile_, container, false);
-        agregar_datos = (Button) vista.findViewById(R.id.btn_AgregarDatos);
 
-        agregar_datos.setOnClickListener(new View.OnClickListener() {
+        db = FirebaseFirestore.getInstance();
+
+        txtViewNombres = vista.findViewById(R.id.textViewNombres);
+        txtViewApellidos = vista.findViewById(R.id.textViewApellidos);
+        txtViewSexo = vista.findViewById(R.id.textViewSexo);
+        txtViewTelefono = vista.findViewById(R.id.textViewTelefono);
+
+        btn_agregar_datos = (Button) vista.findViewById(R.id.btn_AgregarDatos);
+        btn_agregar_datos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Activity_Datos_Usuario.class);
                 startActivity(intent);
             }
-        });
+        });obtenerDatos();
         return vista;
+    }
+
+    private void obtenerDatos() {
+        db.collection("Perfil").document("1").addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                if(documentSnapshot.exists()){
+                    String Nombres = documentSnapshot.getString("Nombres");
+                    String Apellidos = documentSnapshot.getString("Apellidos");
+                    String Sexo = documentSnapshot.getString("Sexo");
+                    String Telefono = documentSnapshot.getString("Telefono");
+                    txtViewNombres.setText(Nombres);
+                    txtViewApellidos.setText(Apellidos);
+                    txtViewSexo.setText(Sexo);
+                    txtViewTelefono.setText(Telefono);
+                }
+            }
+        });
     }
 }
