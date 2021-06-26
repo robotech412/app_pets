@@ -23,7 +23,7 @@
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/floatingActionMenu"
-            android:layout_width="60dp"
+            android:layout_width="168dp"
             android:layout_height="81dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
