@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.app_pets.Adaptador.MedicamentosAdapter;
-import com.example.app_pets.model.Medicamento;
+import com.example.app_pets.modelo.Medicamento;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;

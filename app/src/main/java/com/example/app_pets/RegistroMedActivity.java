@@ -7,16 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.app_pets.model.Medicamento;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class RegistroMedActivity extends AppCompatActivity {
     EditText marca, nombre, cantidad, uso, descripcion;
@@ -63,7 +60,7 @@ public class RegistroMedActivity extends AppCompatActivity {
                     // Toast.makeText(this,"Agregado",Toast.LENGTH_LONG).show();
                     crearDatos();
                     limpiarTexto();
-                    startActivity(new Intent(RegistroMedActivity.this, ProfileActivity.class));
+                    startActivity(new Intent(RegistroMedActivity.this, AddReminderActivity.class));
                     finish();
                 }
 

@@ -1,4 +1,4 @@
-package com.example.app_pets.model;
+package com.example.app_pets.modelo;
 
 public class Perfil {
     private String Nombres;
