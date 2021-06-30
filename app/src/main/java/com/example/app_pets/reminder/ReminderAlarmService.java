@@ -4,16 +4,18 @@ import android.app.IntentService;
 
 
 import android.app.Notification;
-import android.app.NotificationManager;
-
+import android.app.NotificationChannel;
+import android.app.NotificationManager;;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.TaskStackBuilder;
+import android.app.TaskStackBuilder;
 
 import com.example.app_pets.AddReminderActivity;
 import com.example.app_pets.R;
@@ -23,6 +25,7 @@ public class ReminderAlarmService extends IntentService{
     private static final String TAG = ReminderAlarmService.class.getSimpleName();
 
     private static final int NOTIFICATION_ID = 42;
+    private static final String CHANNEL_ID = "";
 
     Cursor cursor;
 
@@ -66,14 +69,32 @@ public class ReminderAlarmService extends IntentService{
             }
         }
 
-        Notification note = new NotificationCompat.Builder(this)
+        Notification note = new NotificationCompat.Builder(this,CHANNEL_ID)
                 .setContentTitle(getString(R.string.reminder_title))
                 .setContentText(description)
                 .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
                 .setContentIntent(operation)
+                .setVibrate(new long[]{1000,1000,1000,1000,1000})
+                .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                 .setAutoCancel(true)
                 .build();
-
+        createNotificationChannel();
         manager.notify(NOTIFICATION_ID, note);
     }
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 }

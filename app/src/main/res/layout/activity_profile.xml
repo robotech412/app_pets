@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="650dp"
         android:gravity="bottom"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layoutMode="clipBounds">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -23,14 +24,20 @@
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/floatingActionMenu"
-            android:layout_width="168dp"
-            android:layout_height="81dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="right"
-            android:visibility="visible"
             app:menu_fab_label="Menú"
             app:srcCompat="@android:drawable/ic_input_add">
+
+            <!--com.github.clans.fab.FloatingActionButton
+                android:id="@+id/subMenu2"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:src="@drawable/medication"
+                app:fab_label="Alarmas" /-->
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/subMenu1"

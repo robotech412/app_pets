@@ -22,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     PagerController pagerAdapter;
     FloatingActionMenu actionMenu;
     FloatingActionButton subMenu1;
+    FloatingActionButton subMenu2;
 
     private Button mButtonSignOut;
     private FirebaseAuth mAuth;
@@ -42,6 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         actionMenu = findViewById(R.id.floatingActionMenu);
         subMenu1 = findViewById(R.id.subMenu1);
+        //subMenu2 = findViewById(R.id.subMenu2);
         actionMenu.setClosedOnTouchOutside(true);
 
         pagerAdapter= new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
@@ -90,5 +92,13 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        /*subMenu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,AddReminderActivity.class));
+                finish();
+            }
+        });*/
     }
 }
