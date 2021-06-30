@@ -49,7 +49,7 @@
             android:singleLine="true"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/mdtp_transparent_black"
             tools:text="Date and Time"/>
 
         <TextView
