@@ -158,7 +158,7 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
         mTimeText.setText(mTime);
         mRepeatNoText.setText(mRepeatNo);
         mRepeatTypeText.setText(mRepeatType);
-        mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+        mRepeatText.setText("Cada " + mRepeatNo + " " + mRepeatType + "(s)");
 
         // To save state on device rotation
         if (savedInstanceState != null) {
@@ -289,7 +289,7 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
         boolean on = ((Switch) view).isChecked();
         if (on) {
             mRepeat = "true";
-            mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+            mRepeatText.setText("Cada " + mRepeatNo + " " + mRepeatType + "(s)");
         } else {
             mRepeat = "false";
             mRepeatText.setText(R.string.repeat_off);
@@ -300,11 +300,11 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
     public void selectRepeatType(View v){
         final String[] items = new String[5];
 
-        items[0] = "Minute";
-        items[1] = "Hour";
-        items[2] = "Day";
-        items[3] = "Week";
-        items[4] = "Month";
+        items[0] = "Minutos";
+        items[1] = "Hora";
+        items[2] = "Dia";
+        items[3] = "Semana";
+        items[4] = "Mes";
 
         // Create List Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -315,7 +315,7 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
 
                 mRepeatType = items[item];
                 mRepeatTypeText.setText(mRepeatType);
-                mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+                mRepeatText.setText("Cada " + mRepeatNo + " " + mRepeatType + "(s)");
             }
         });
         AlertDialog alert = builder.create();
@@ -338,12 +338,12 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
                         if (input.getText().toString().length() == 0) {
                             mRepeatNo = Integer.toString(1);
                             mRepeatNoText.setText(mRepeatNo);
-                            mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+                            mRepeatText.setText("Cada " + mRepeatNo + " " + mRepeatType + "(s)");
                         }
                         else {
                             mRepeatNo = input.getText().toString().trim();
                             mRepeatNoText.setText(mRepeatNo);
-                            mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+                            mRepeatText.setText("Cada " + mRepeatNo + " " + mRepeatType + "(s)");
                         }
                     }
                 });
@@ -393,6 +393,7 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
 
                 else {
                     saveReminder();
+                    startActivity(new Intent(AddReminderActivity.this,ProfileActivity.class));
                     finish();
                 }
                 return true;
@@ -662,7 +663,7 @@ public class AddReminderActivity extends AppCompatActivity implements TimePicker
             mTimeText.setText(time);
             mRepeatNoText.setText(repeatNo);
             mRepeatTypeText.setText(repeatType);
-            mRepeatText.setText("Every " + repeatNo + " " + repeatType + "(s)");
+            mRepeatText.setText("Cada " + repeatNo + " " + repeatType + "(s)");
             // Setup up active buttons
             // Setup repeat switch
             if (repeat.equals("false")) {
